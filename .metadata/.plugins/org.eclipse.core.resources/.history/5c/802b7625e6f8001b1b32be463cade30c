@@ -1,0 +1,18 @@
+package com.example.hello.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class LoginPrcController {
+
+//	@GetMapping("/loginForm")
+//	public void loginForm() {
+//
+//	}
+
+	@GetMapping("/loginForm")
+	public String loginForm() {
+		return "loginForm";
+	}
+}
