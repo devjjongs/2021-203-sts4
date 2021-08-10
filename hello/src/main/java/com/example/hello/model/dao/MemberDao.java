@@ -8,5 +8,5 @@ import com.example.hello.model.vo.Member;
 @Mapper
 public interface MemberDao {
 	
-	Member getMember(@Param("userId") String userId, @Param("userPw") String userPw);
+	Member getMember(@Param("userId") String userId , @Param("userPw") String userPw);
 }

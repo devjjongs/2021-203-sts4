@@ -8,3 +8,53 @@
   submit 버튼을 누르면  ==> 로그인프로세스 컨트롤러 에서 loginCheck메소드 호출
       매개변수로 받은 데이터를  system out 출력 
       ==> 리턴 welcome.html
+      
+      
+//////////////////////////////////
+20210810  
+	로그인프로세스 컨트롤러 loginCheck메소드 
+	DAO적인 jdbc ==> oracle , mybatis
+		--> pom.xml lib 
+			- oracle ojdbc8
+			- jdbc
+			- mybatis
+			
+		--> 환경설정/hello/src/main/resources/application.properties
+		    - dataSource driverClassName
+		    # MyBatis ,  폴더와 package 설정
+				mybatis.mapper-locations=
+				mybatis.type-aliases-package=
+				mybatis.type-handlers-package=
+		    
+		    
+		    
+		--> dao적인 interface , query 문을 가지고 Mapper.xml
+		    - @Mapper
+				public interface MemberDao {
+					
+					Member getMember(@Param("userId") String userId , @Param("userPw") String userPw);
+				}
+				<mapper namespace="com.example.hello.model.dao.MemberDao">
+					<!-- Member getMember(@Param("userId") String userId , @Param("userPw") String userPw); -->
+					<select id="getMember" resultType="com.example.hello.model.vo.Member">
+				  		select *  from  member  where  userId =#{userId} and userPw = #{userPw} 
+				  	</select>
+					
+				</mapper>  
+		--> Controller에서 dao  와 bean을 호출해서 연결 autowire
+			@Autowired
+			private MemberDao memberDao;
+		--> dao.메소드(id,pw) 결과 리턴
+
+	실제데이터가 있는지 없는지에 따라가 
+	존재: welcome.html
+    존재하지 않는다면 : loginForm.html
+    
+    
+    
+    
+    
+    
+    
+    
+    
