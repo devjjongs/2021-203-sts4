@@ -50,6 +50,37 @@
 	존재: welcome.html
     존재하지 않는다면 : loginForm.html
     
+///////////////////////////////////////////////////////
+오후
+	==> welcome.html에서 조회된 member의 이름과 이메일등의 정보를 출력해보자  
+	==> memberList 호출
+	    :  http://localhost:9095/memberList
+		--> controller의  memberList()  호출
+		     
+		    --> dao의 memberList() 
+		        ~~Mapper.xml 
+		           <select id="memberList" > ~~~</~~>
+		    --> 결과를
+		          
+		    --> memberList.html로 전송
+	
+	
+ ////////////////////////////////////////////////////////////
+    가입창
+    멤버가입완료됬는지 확인 메세지 출력
+    멤버목록확인
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

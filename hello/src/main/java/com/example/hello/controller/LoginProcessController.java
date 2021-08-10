@@ -43,4 +43,25 @@ public class LoginProcessController {
 		model.addAttribute("member", member);
 		return "welcome" ;
 	}
+	
+	@GetMapping("/memberList")
+	public  void  memberList(Model model) {
+		System.out.println("${memberList}");
+		model.addAttribute( "memberList"  , memberDao.memberList());
+	}
+	
+	@GetMapping("/memberForm")
+	public void memberForm() {
+		
+	}
+	
+	
+	@PostMapping("/insertMember")
+	public String insertMember(Member member) {
+		memberDao.insertMember(member);
+		return "redirect:/memberList";
+	}
+	
+	
+	
 }
